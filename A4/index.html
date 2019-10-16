@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+  <title>Slide Show</title>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+
+<script>
+var currentSlide = 1;
+function goToSlide(n)
+{
+  $("img").fadeOut();
+  $("img:nth-of-type(" + n + ")").stop().fadeIn();
+  currentSlide = n;
+}
+function goPrev()
+{
+    var nextSlide = currentSlide - 1
+    if(nextSlide == 0){
+      nextSlide = 4;
+    }
+    goToSlide(nextSlide);
+}
+function goNext()
+{
+  var nextSlide = currentSlide + 1
+  if(nextSlide == 5){
+    nextSlide = 1;
+  }
+  goToSlide(nextSlide);
+}
+
+</script>
+
+<style>
+body{
+  margin:0;
+}
+
+button{
+    border-radius: 100%;
+}
+
+button:hover{
+    background-color: #FF99C8;
+}
+
+#prev{
+  position:fixed;
+  left: 10px;
+  bottom: 10px;
+}
+
+#next{
+  position:fixed;
+  right: 10px;
+  bottom: 10px;
+}
+
+#one{
+  position:fixed;
+  left: 550px;
+  bottom: 10px;
+}
+
+#two{
+  position:fixed;
+  left: 650px;
+  bottom: 10px;
+}
+
+#three{
+  position:fixed;
+  left: 750px;
+  bottom: 10px;
+}
+
+#four{
+  position:fixed;
+  left: 850px;
+  bottom: 10px;
+}
+
+img{
+  display: block;
+  position:absolute;
+  width: 100%;
+}
+
+.selected{
+  background: gold;
+}
+
+</style>
+</head>
+
+    <body onload='goToSlide(1)'>
+        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Aegotheles_chrisoptus_-_Catlereigh_Nature_Reserve.jpg/300px-Aegotheles_chrisoptus_-_Catlereigh_Nature_Reserve.jpg'>
+        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Turnix_varius_-_Castlereigh_nature_reserve.jpg/450px-Turnix_varius_-_Castlereigh_nature_reserve.jpg'>
+        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Acanthorhynchus_tenuirostris_-_Mogo_Campground.jpg/450px-Acanthorhynchus_tenuirostris_-_Mogo_Campground.jpg'>
+        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Eopsaltria_australis_-_Mogo_Campground.jpg/450px-Eopsaltria_australis_-_Mogo_Campground.jpg'>
+        <div class="myButtons" role="group">
+            <button id='one' type="button" onclick='goToSlide(1)'> 1 </button>
+            <button id='two' type="button" onclick='goToSlide(2)'> 2 </button>
+            <button id='three' type="button" onclick='goToSlide(3)'> 3 </button>
+            <button id='four' type="button" onclick='goToSlide(4)'> 4 </button>
+            <button id='prev' type="button" onclick='goPrev()'> Prev </button>
+            <button id='next' type="button" onclick='goNext()'> Next </button>
+        </div>
+</html>
