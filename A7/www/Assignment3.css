@@ -1,0 +1,101 @@
+* {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+h1, h2 {
+	margin: 1em 0 0 0;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+h2 {
+    margin: 0 0 1em 0;
+    font-size: smaller;
+    color: #F9DBBD;
+    background-color: black;
+}
+
+a:hover{
+    color:white;
+}
+
+a{
+    color:#A53860;
+}
+
+#container {
+    margin: 0 auto;
+    width: 50%;
+}
+#accordion input {
+	display: none;
+}
+#accordion label {
+	background: #FF99C8;
+	border-radius: .25em;
+	cursor: pointer;
+	display: block;
+	margin-bottom: .125em;
+	padding: .25em 1em;
+	z-index: 20;
+}
+#accordion label:hover {
+	background: #AD6F84;
+}
+
+#accordion input:checked + label {
+	background: darkgray;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+	color: black;
+    margin-bottom: 0;
+    font-weight: bold;
+    text-shadow: 2px 2px 15px;
+}
+#accordion article {
+	background: darkgray;
+	height:0px;
+	overflow:hidden;
+	z-index:10;
+}
+#accordion article p {
+	padding: 1em;
+}
+
+#accordion input:checked ~ article {
+	border-bottom-left-radius: .25em;
+	border-bottom-right-radius: .25em;
+	height: auto;
+	margin-bottom: .125em;
+}
+
+.row {
+    display: flex;
+    text-align: center;
+  }
+  
+.column {
+    flex: 50%;
+  }
+
+table t00 td, th, tr {
+    border: 2px solid #AD6F84;
+    background-color: darkgray;
+    padding: 3px;
+    text-align: center;
+    color: #AD6F84;
+    text-shadow: 1px 1px 2px;
+}
+
+ol{
+    list-style: decimal;
+    padding-left: 40px;
+}
+
+ul{
+    list-style: square;
+    padding:10px;
+}
